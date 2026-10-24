@@ -11,10 +11,10 @@ Uma aplicação desktop desenvolvida em **Java (Swing)** para ajudar os utilizad
 
 ## 🛠️ Tecnologias e Arquitetura
 
-O projeto segue o padrão de arquitetura **MVC (Model-View-Controller)**[cite: 4]:
+O projeto segue o padrão de arquitetura **MVC (Model-View-Controller)**:
 * **Linguagem:** Java 21
 * **Interface Gráfica:** Java Swing
-* **Gestão de Dependências:** Maven (`pom.xml`)[cite: 4]
+* **Gestão de Dependências:** Maven (`pom.xml`)
 * **Bibliotecas Externas:** JFreeChart (para a geração de gráficos)
 
 ## 🚀 Como Executar o Projeto
@@ -24,10 +24,10 @@ O projeto segue o padrão de arquitetura **MVC (Model-View-Controller)**[cite: 4
 * Um IDE compatível com Maven (as instruções abaixo focam-se no **IntelliJ IDEA**).
 
 ### Passos para execução
-1. Abra o IDE, vá a `File > Open` e selecione a pasta raiz do projeto (que contém o ficheiro `pom.xml`)[cite: 4].
+1. Abra o IDE, vá a `File > Open` e selecione a pasta raiz do projeto (que contém o ficheiro `pom.xml`).
 2. Clique em **"Trust Project"** e aguarde que o Maven importe o projeto e descarregue as dependências necessárias.
 3. Configure a versão do Java acedendo a `File > Project Structure > Project SDK` e selecionando o **JDK 21**.
-4. No explorador lateral, navegue até `src/main/java/controlefinanceiro/Main.java`[cite: 4].
+4. No explorador lateral, navegue até `src/main/java/controlefinanceiro/Main.java`.
 5. Clique com o botão direito no ficheiro `Main.java` e selecione **Run 'Main.main()'**.
 
 ## 🗄️ Armazenamento de Dados
@@ -37,11 +37,11 @@ A aplicação utiliza persistência de dados local baseada em ficheiros de texto
 * `usuarios.txt`: Guarda as credenciais dos utilizadores registados.
 * `usuarios/transacoes_NOME.txt`: Ficheiros individuais criados automaticamente para registar o histórico de cada utilizador.
 
-> **Nota de Segurança:** Por conterem informações sensíveis, os ficheiros de dados locais e os ficheiros de configuração da IDE estão mapeados no `.gitignore` e não devem ser enviados para o repositório Git[cite: 4].
+> **Nota de Segurança:** Por conterem informações sensíveis, os ficheiros de dados locais e os ficheiros de configuração da IDE estão mapeados no `.gitignore` e não devem ser enviados para o repositório Git.
 
 ## 📂 Estrutura do Projeto
 
-O código fonte está organizado da seguinte forma para separar responsabilidades de forma clara[cite: 4]:
+O código fonte está organizado da seguinte forma para separar responsabilidades de forma clara:
 
 ```text
 src/main/
