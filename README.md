@@ -1,21 +1,63 @@
-# Controle Financeiro Pessoal
+# 💰 Controle Financeiro Pessoal
 
-Aplicação Java (Swing) com login/cadastro, controle de receitas e despesas por usuário e gráfico de resumo mensal (JFreeChart).
+Uma aplicação desktop desenvolvida em **Java (Swing)** para ajudar os utilizadores a gerir as suas finanças de forma simples e eficiente. O sistema suporta múltiplos utilizadores, controlo detalhado de receitas e despesas, e visualização de dados através de gráficos interativos.
 
-## Como executar (IntelliJ IDEA)
-1. `File > Open` e selecione a pasta que contém o `pom.xml` (aceite "Trust Project" e deixe o Maven importar).
-2. Use o JDK 21 (`File > Project Structure > Project SDK`).
-3. Rode `src/main/java/controlefinanceiro/Main.java`.
+## ✨ Funcionalidades
 
-Os dados são criados na pasta do projeto ao usar o programa: `usuarios.txt` (usuários, com senha em hash) e `usuarios/transacoes_NOME.txt`. Esses arquivos não vão para o Git (veja o `.gitignore`).
+* **Autenticação e Sessão:** Sistema de login e registo de utilizadores (com senhas guardadas em *hash*) e gestão de sessão ativa.
+* **Gestão de Transações:** Adição, categorização e controlo de receitas e despesas.
+* **Dashboard Visual:** Geração de gráficos de resumo mensal utilizando a biblioteca **JFreeChart** para facilitar a análise financeira.
+* **Isolamento de Dados:** Cada utilizador possui o seu próprio histórico financeiro, garantindo total privacidade.
 
-## Estrutura
-```
-src/main/java/controlefinanceiro/
-├── Main.java
-├── model/        Transacao, Receita, Despesa, ResumoFinanceiro
-├── controller/   GerenciadorFinancas
-├── util/         ArquivoTransacoes, RepositorioUsuarios, SessaoUsuario
-└── view/         Login, Cadastro, AppFinanceiro, TelaGrafico
-src/main/resources/img/bntvolta.png
-```
+## 🛠️ Tecnologias e Arquitetura
+
+O projeto segue o padrão de arquitetura **MVC (Model-View-Controller)**[cite: 4]:
+* **Linguagem:** Java 21
+* **Interface Gráfica:** Java Swing
+* **Gestão de Dependências:** Maven (`pom.xml`)[cite: 4]
+* **Bibliotecas Externas:** JFreeChart (para a geração de gráficos)
+
+## 🚀 Como Executar o Projeto
+
+### Pré-requisitos
+* **Java Development Kit (JDK) 21** instalado no sistema.
+* Um IDE compatível com Maven (as instruções abaixo focam-se no **IntelliJ IDEA**).
+
+### Passos para execução
+1. Abra o IDE, vá a `File > Open` e selecione a pasta raiz do projeto (que contém o ficheiro `pom.xml`)[cite: 4].
+2. Clique em **"Trust Project"** e aguarde que o Maven importe o projeto e descarregue as dependências necessárias.
+3. Configure a versão do Java acedendo a `File > Project Structure > Project SDK` e selecionando o **JDK 21**.
+4. No explorador lateral, navegue até `src/main/java/controlefinanceiro/Main.java`[cite: 4].
+5. Clique com o botão direito no ficheiro `Main.java` e selecione **Run 'Main.main()'**.
+
+## 🗄️ Armazenamento de Dados
+
+A aplicação utiliza persistência de dados local baseada em ficheiros de texto. Os dados são criados dinamicamente na pasta do projeto à medida que o sistema é utilizado:
+
+* `usuarios.txt`: Guarda as credenciais dos utilizadores registados.
+* `usuarios/transacoes_NOME.txt`: Ficheiros individuais criados automaticamente para registar o histórico de cada utilizador.
+
+> **Nota de Segurança:** Por conterem informações sensíveis, os ficheiros de dados locais e os ficheiros de configuração da IDE estão mapeados no `.gitignore` e não devem ser enviados para o repositório Git[cite: 4].
+
+## 📂 Estrutura do Projeto
+
+O código fonte está organizado da seguinte forma para separar responsabilidades de forma clara[cite: 4]:
+
+```text
+src/main/
+├── java/controlefinanceiro/
+│   ├── Main.java                 # Classe principal (Ponto de entrada)
+│   ├── model/                    # Modelos e regras de negócio
+│   │   ├── Transacao, Receita, Despesa
+│   │   └── ResumoFinanceiro
+│   ├── controller/               # Controladores (intermediação lógica)
+│   │   └── GerenciadorFinancas
+│   ├── util/                     # Persistência de dados e utilitários
+│   │   ├── ArquivoTransacoes
+│   │   ├── RepositorioUsuarios
+│   │   └── SessaoUsuario
+│   └── view/                     # Ecrãs e componentes visuais (Interfaces)
+│       ├── Login, Cadastro
+│       └── AppFinanceiro, TelaGrafico
+└── resources/img/
+    └── bntvolta.png              # Ativos visuais e imagens da interface
