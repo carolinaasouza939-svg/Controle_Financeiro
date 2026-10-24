@@ -1,0 +1,12 @@
+# Compilados e IDEs
+/bin/
+/target/
+/out/
+.idea/
+*.iml
+
+# Dados gerados pelo programa (contêm usuários e transações)
+/usuarios.txt
+/usuarios/
+*.csv
+/transacoes.txt
